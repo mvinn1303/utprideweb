@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#1E5FE8">
+  <meta name="description" content="UT PRIDE adalah komunitas independen bagi mahasiswa Universitas Terbuka untuk bertumbuh, berkolaborasi, berkreasi, dan memberi dampak positif.">
+  <link rel="icon" type="image/png" href="foto/favicon.png">
+  <title>UT PRIDE — Connect, Inspire, Grow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --blue:#1E5FE8; --blue2:#3B7BFF; --navy:#041537;
+      --pink:#D936C4; --yellow:#9DB7FF; --ink:#17243B;
+      --muted:#5B6A82; --soft:#F4F8FF; --line:#E5ECF6; --white:#fff;
+      --shadow:0 18px 55px rgba(22,67,132,.12); --radius:22px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth;scroll-padding-top:90px}
+    body{margin:0;font-family:"DM Sans",sans-serif;color:var(--ink);line-height:1.65;background:#fff}
+    a{color:inherit;text-decoration:none} button,input,textarea,select{font:inherit}
+    button{cursor:pointer} img{max-width:100%;display:block}
+    .container{width:min(1160px,calc(100% - 40px));margin:auto}
+    .topline{height:6px;background:linear-gradient(90deg,var(--blue) 0 48%,var(--pink) 48% 76%,var(--yellow) 76%)}
+    header{height:78px;position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(16px);border-bottom:1px solid rgba(229,236,246,.9)}
+    .nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:11px;font:800 21px "Plus Jakarta Sans";letter-spacing:-.7px}
+    .brand-mark{width:42px;height:42px;border-radius:14px;background:var(--blue);color:#fff;display:grid;place-items:center;position:relative;box-shadow:0 8px 18px #1E5FE833}
+    .brand-mark:after{content:"";position:absolute;width:11px;height:11px;border:3px solid white;border-radius:50%;background:var(--yellow);right:-4px;top:-4px}
+    .brand em{font-style:normal;color:var(--pink)}
+    .navlinks{display:flex;align-items:center;gap:25px;font-size:13px;font-weight:700;color:#59677D}
+    .navlinks a:hover,.navlinks a.active{color:var(--blue)}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;border:0;border-radius:12px;padding:13px 20px;background:var(--blue);color:white;font-weight:800;font-size:14px;transition:.2s}
+    .btn:hover{background:#1649B8;transform:translateY(-2px)}
+    .btn-outline{background:white;color:var(--blue);border:1px solid #D7E4F8}
+    .btn-outline:hover{background:#EDF4FF;color:var(--blue)}
+    .btn-pink{background:#B726A4}.btn-pink:hover{background:#9A1D8B}
+    .btn-yellow{background:var(--yellow);color:#041537}.btn-yellow:hover{background:#C7D6FF;color:#041537}
+    .menu-btn{display:none;border:0;background:var(--soft);color:var(--blue);padding:10px 13px;border-radius:10px;font-size:20px}
+    .hero{position:relative;overflow:hidden;background:linear-gradient(120deg,#F1F6FF 0%,#fff 58%,#FDF1FB 100%);padding:84px 0 78px}
+    .hero:before{content:"";position:absolute;width:420px;height:420px;border-radius:50%;background:#9DB7FF33;right:-170px;top:-190px}
+    .hero:after{content:"";position:absolute;width:260px;height:260px;border-radius:50%;background:#D936C416;left:-150px;bottom:-170px}
+    .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:55px}
+    .eyebrow,.kicker{display:inline-flex;align-items:center;gap:9px;text-transform:uppercase;font-size:11px;letter-spacing:1.7px;font-weight:800;color:var(--blue)}
+    .eyebrow{background:#E7F0FF;padding:8px 14px;border-radius:99px;letter-spacing:1px}
+    .eyebrow i{width:8px;height:8px;background:var(--pink);border-radius:50%}
+    h1,h2,h3{font-family:"Plus Jakarta Sans",sans-serif;line-height:1.17;letter-spacing:-1px}
+    h1{font-size:clamp(42px,5.5vw,67px);margin:22px 0 19px}
+    h1 .blue{color:var(--blue)}h1 .pink{color:var(--pink)}
+    .hero-copy{max-width:580px;color:var(--muted);font-size:17px;margin:0 0 28px}
+    .actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-meta{display:flex;align-items:center;gap:12px;margin-top:28px;color:#5B6A82;font-size:12px;font-weight:600}
+    .mini-dots{display:flex}.mini-dots b{width:25px;height:25px;border:2px solid white;border-radius:50%;margin-left:-6px;background:var(--pink)}.mini-dots b:first-child{margin-left:0;background:var(--blue)}.mini-dots b:nth-child(2){background:var(--yellow)}
+    .hero-art{min-height:390px;position:relative;display:grid;place-items:center}
+    .art-panel{height:340px;width:min(100%,445px);border-radius:32px;background:var(--blue);position:relative;overflow:hidden;box-shadow:0 28px 65px #1E5FE833;padding:30px;display:flex;align-items:flex-end;color:#fff}
+    .art-panel:before{content:"";position:absolute;width:310px;height:310px;border:45px solid #FFFFFF20;border-radius:50%;right:-70px;top:-100px}
+    .art-panel:after{content:"";position:absolute;width:175px;height:175px;background:var(--pink);border-radius:47% 53% 60% 40%;right:55px;top:55px;transform:rotate(25deg)}
+    .art-word{position:relative;z-index:2;font:800 39px/1.05 "Plus Jakarta Sans";letter-spacing:-1.8px}
+    .art-word small{display:block;margin-top:13px;font:700 11px "DM Sans";letter-spacing:2px;color:#DCEAFF}
+    .float{position:absolute;z-index:3;background:#fff;padding:12px 16px;border-radius:14px;box-shadow:var(--shadow);font-size:12px;font-weight:800}
+    .float.one{left:-5px;top:28px}.float.two{right:-12px;bottom:25px;background:var(--yellow);color:#041537}
+    .section{padding:86px 0}.soft{background:var(--soft)}
+    .section-head{text-align:center;max-width:700px;margin:0 auto 44px}
+    .section-head h2,.about-copy h2,.contact-copy h2{font-size:clamp(30px,4vw,43px);margin:12px 0}
+    .section-head p,.about-copy p,.contact-copy>p{color:var(--muted);margin:0}
+    .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:62px;align-items:center}
+    .about-art{min-height:350px;border-radius:28px;background:linear-gradient(145deg,var(--yellow),#D9E3FF);padding:30px;position:relative;overflow:hidden;display:flex;align-items:flex-end}
+    .about-art:before{content:"";position:absolute;width:220px;height:220px;background:var(--pink);border-radius:50%;right:-45px;top:-55px}
+    .about-art:after{content:"";position:absolute;width:170px;height:170px;border:23px solid white;border-radius:50%;left:42px;top:45px}
+    .about-art strong{position:relative;z-index:2;font:800 31px/1.15 "Plus Jakarta Sans";max-width:260px;color:#173D77}
+    .about-copy p{margin-bottom:15px}
+    .checks{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:23px}
+    .check{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:700}
+    .check i{font-style:normal;width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:#E7F0FF;color:var(--blue)}
+    .values{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:35px}
+    .value{padding:19px 15px;border:1px solid var(--line);border-radius:16px;text-align:center;background:#fff}
+    .value strong{display:block;color:var(--blue);font:800 15px "Plus Jakarta Sans"}.value span{font-size:12px;color:var(--muted)}
+    .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .card{background:white;border:1px solid var(--line);border-radius:20px;padding:26px;box-shadow:0 8px 28px #173D7708;transition:.22s}
+    .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .icon{width:51px;height:51px;border-radius:15px;background:#E8F1FF;display:grid;place-items:center;font-size:23px;margin-bottom:18px}
+    .card:nth-child(2) .icon{background:#FCEBFA}.card:nth-child(3) .icon{background:#EEF2FF}.card:nth-child(4) .icon{background:#EAF8F0}
+    .card h3{font-size:18px;margin:0 0 9px;letter-spacing:-.4px}.card p{font-size:13px;color:var(--muted);margin:0}
+    .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .program{border-radius:19px;padding:23px;background:white;border:1px solid var(--line)}
+    .program .num{font:800 12px "Plus Jakarta Sans";color:#B726A4;letter-spacing:1px}
+    .program h3{font-size:17px;margin:12px 0 8px}.program p{font-size:13px;color:var(--muted);margin:0}
+    .program a{display:inline-block;margin-top:15px;color:var(--blue);font-size:12px;font-weight:800}
+    .principles{background:var(--blue);color:#fff;position:relative;overflow:hidden;padding:66px 0}
+    .principles:after{content:"";position:absolute;width:340px;height:340px;border:45px solid #FFFFFF12;border-radius:50%;right:-90px;top:-205px}
+    .principle-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:45px;align-items:center}
+    .principles h2{font-size:clamp(29px,4vw,41px);margin:12px 0}.principles p{color:#D8E7FF;margin:0}
+    .principles .kicker{color:var(--yellow)}
+    .principle-list{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .principle{padding:15px;border-radius:14px;background:#FFFFFF14;border:1px solid #FFFFFF20;font-weight:700;font-size:13px}
+    .principle b{color:var(--yellow);margin-right:7px}
+    .join-banner{background:linear-gradient(100deg,#FDF1FB,#EEF3FF);padding:56px 0}
+    .join-inner{display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .join-inner h2{font-size:clamp(28px,3.5vw,38px);margin:0 0 10px}.join-inner p{margin:0;color:var(--muted)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:45px;align-items:start}
+    .contact-copy>p{margin-bottom:24px}
+    .contact-item{display:flex;gap:13px;align-items:center;margin:17px 0}
+    .contact-item .icon{width:44px;height:44px;margin:0;flex:none;font-size:18px}
+    .contact-item small{display:block;color:var(--muted)}
+    form{padding:27px;border:1px solid var(--line);border-radius:22px;background:#fff;box-shadow:var(--shadow)}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{display:block;font-size:12px;font-weight:800;margin-bottom:6px}
+    input,textarea,select{width:100%;border:1px solid #DCE4F0;border-radius:10px;padding:12px 13px;font-size:13px;outline:none;margin-bottom:15px;background:white}
+    input:focus,textarea:focus,select:focus{border-color:var(--blue);box-shadow:0 0 0 3px #1E5FE81A}
+    textarea{min-height:110px;resize:vertical}
+    .form-note{font-size:11px;color:#5B6A82;margin:10px 0 0}
+    footer{background:var(--navy);color:#D9E5F5;padding:34px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:22px;flex-wrap:wrap}
+    .footer-brand{font:800 20px "Plus Jakarta Sans";color:white}.footer-brand span{color:var(--pink)}
+    .footer-links{display:flex;gap:19px;flex-wrap:wrap;font-size:12px}.footer-links a:hover{color:var(--yellow)}
+    .copyright{font-size:11px;color:#AFC2DE;margin-top:3px}
+    .disclaimer{font-size:11px;color:#AFC2DE;margin-top:12px;max-width:780px}
+    @media(max-width:900px){
+      .navlinks{display:none;position:absolute;top:78px;left:0;right:0;padding:20px 25px;background:#fff;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start}
+      .navlinks.open{display:flex}.menu-btn{display:block}.nav>.btn{display:none}
+      .hero-grid,.about-grid,.contact-grid{grid-template-columns:1fr}.hero-grid{gap:30px}.hero{padding:65px 0}
+      .hero-art{min-height:340px}.art-panel{height:300px}.about-grid{gap:35px}
+      .program-grid{grid-template-columns:1fr 1fr}.principle-inner{grid-template-columns:1fr}
+    }
+    @media(max-width:600px){
+      .container{width:calc(100% - 30px)}header{height:70px}.navlinks{top:70px}
+      .hero{padding:53px 0}.hero-copy{font-size:15px}.hero-art{min-height:290px}.art-panel{height:255px;padding:23px}.art-word{font-size:31px}
+      .float.one{left:0;top:8px}.float.two{right:0;bottom:5px}
+      .section{padding:65px 0}.cards,.program-grid{grid-template-columns:1fr}.checks{grid-template-columns:1fr}
+      .values{grid-template-columns:1fr 1fr}.principle-list{grid-template-columns:1fr 1fr}
+      .join-inner{align-items:flex-start;flex-direction:column}.form-row{grid-template-columns:1fr;gap:0}
+      .footer-inner{align-items:flex-start;flex-direction:column}
+    }
+
+    /* ===== MOTION LAYER ===== */
+    #progress{position:fixed;left:0;top:0;height:4px;width:100%;z-index:90;transform-origin:left;transform:scaleX(0);background:linear-gradient(90deg,var(--yellow),var(--pink))}
+    @keyframes rise{from{opacity:0;transform:translateY(34px) rotate(2deg)}to{opacity:1;transform:none}}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes bob{50%{transform:translateY(-11px)}}
+    @keyframes morph{0%,100%{border-radius:47% 53% 60% 40%;transform:rotate(25deg)}50%{border-radius:62% 38% 42% 58%;transform:rotate(100deg) scale(1.14)}}
+    @keyframes drift{50%{transform:translate(-26px,22px) scale(1.08)}}
+    @keyframes pulse{0%{box-shadow:0 0 0 0 #D936C466}70%,100%{box-shadow:0 0 0 18px #D936C400}}
+    @keyframes scroll{to{transform:translateX(-50%)}}
+    .w{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+    .w:nth-of-type(1){animation-delay:.1s}.w:nth-of-type(2){animation-delay:.28s}.w:nth-of-type(3){animation-delay:.46s}
+    .hero-grid>div:first-child>.eyebrow,.hero-copy,.actions,.hero-meta{animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+    .hero-grid>div:first-child>.eyebrow{animation-delay:0s}.hero-copy{animation-delay:.6s}.actions{animation-delay:.75s}.hero-meta{animation-delay:.9s}
+    .art-panel{translate:calc(var(--px,0)*-14px) calc(var(--py,0)*-14px);transition:translate .35s ease-out}
+    .art-panel:before{animation:spin 32s linear infinite}
+    .art-panel:after{animation:morph 9s ease-in-out infinite}
+    .float{translate:calc(var(--px,0)*26px) calc(var(--py,0)*26px);transition:translate .35s ease-out}
+    .float.one{animation:bob 4s ease-in-out infinite}.float.two{animation:bob 5s ease-in-out -2s infinite}
+    .mini-dots b{animation:bob 2.4s ease-in-out infinite}.mini-dots b:nth-child(2){animation-delay:.25s}.mini-dots b:nth-child(3){animation-delay:.5s}
+    .marquee{overflow:hidden;background:var(--navy);color:#fff;padding:16px 0;white-space:nowrap}
+    .track{display:inline-flex;width:max-content;animation:scroll 30s linear infinite}
+    .marquee:hover .track{animation-play-state:paused}
+    .grp{display:flex;align-items:center;gap:34px;padding-right:34px;font:800 19px "Plus Jakarta Sans";letter-spacing:-.3px}
+    .grp i{font-style:normal;color:var(--pink)}.grp i:nth-of-type(3n+2){color:var(--yellow)}.grp i:nth-of-type(3n){color:#6FA8FF}
+    .about-art:before{animation:drift 8s ease-in-out infinite}.about-art:after{animation:spin 26s linear infinite}
+    .principles:after{animation:spin 45s linear infinite}
+    .join-banner .btn{animation:pulse 2.2s infinite}
+    .card,.program,.value{position:relative;overflow:hidden}
+    .card>*,.program>*{position:relative}
+    .card:before,.program:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),#3B7BFF17,transparent 70%)}
+    .card:hover:before,.program:hover:before{opacity:1}
+    .program{transition:transform .25s,border-color .25s,box-shadow .25s}
+    .program:hover{transform:translateY(-6px);border-color:var(--pink);box-shadow:var(--shadow)}
+    .program a{transition:transform .2s}.program a:hover{transform:translateX(5px)}
+    .card:hover .icon{transform:rotate(-8deg) scale(1.1)}.icon{transition:transform .3s}
+    .value{transition:transform .25s,background .25s}.value:hover{transform:translateY(-4px);background:var(--soft)}
+    .principle{transition:transform .2s,background .2s}.principle:hover{transform:translateX(5px);background:#FFFFFF24}
+    .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+    .reveal.in{opacity:1;transform:none}
+    @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
+
+    /* ===== SCROLL-DRIVEN MOTION ===== */
+    body{overflow-x:clip}
+    .hero:before{translate:0 calc(var(--hp,0)*140px)}
+    .hero:after{translate:calc(var(--hp,0)*90px) calc(var(--hp,0)*-110px)}
+    .hero-grid>div:first-child{translate:0 calc(var(--hp,0)*60px);opacity:calc(1 - var(--hp,0)*.7)}
+    .hero-art{transform:translateY(calc(var(--hp,0)*-70px))}
+    .art-panel{rotate:calc(var(--hp,0)*8deg)}
+    .track{animation:none}
+    .about-art:before{translate:0 calc(var(--ap,0)*140px)}
+    .about-art:after{rotate:calc(var(--ap,0)*360deg)}
+    .about-art strong{translate:calc(var(--ap,0)*-40px) 0}
+    .principles:after{translate:calc(var(--ap,0)*-160px) calc(var(--ap,0)*120px);rotate:calc(var(--ap,0)*420deg)}
+    .card,.program,.value{translate:calc(var(--o,0)*var(--dir,1)*90px) 0;rotate:calc(var(--o,0)*var(--dir,1)*3deg)}
+    .join-inner>div{translate:calc(var(--jp,0)*-60px) 0}
+    .join-inner .btn{translate:calc(var(--jp,0)*60px) 0}
+
+    /* ===== PAGE TRANSITIONS ===== */
+    @keyframes waveMove{to{transform:translateX(-50%)}}
+    .wave{position:absolute;left:0;right:0;bottom:-1px;height:84px;overflow:hidden;line-height:0;pointer-events:none}
+    .wv{position:absolute;left:0;bottom:0;width:200%;height:100%;animation:waveMove 14s linear infinite}
+    .wave-hero{z-index:2;height:96px}
+    .wave-hero .a{fill:#041537;opacity:.10}.wave-hero .b{fill:#041537;opacity:.28}.wave-hero .c{fill:#041537}
+    .marquee{position:relative;padding:18px 0 62px}
+    .wave-mq{height:56px;z-index:2}
+    .wave-mq .a{fill:#fff;opacity:.35}.wave-mq .b{fill:#fff}
+    .hero-grid{transform-origin:50% 100%;scale:calc(1 - var(--hp,0)*.07);filter:blur(calc(var(--hp,0)*5px))}
+    /* ===== ANIMATION SYSTEM: reveal / fade up / slide / stagger / float / hover ===== */
+    .reveal{will-change:opacity,transform}
+    .reveal[data-anim="up"]{transform:translateY(38px)}
+    .reveal[data-anim="left"]{transform:translateX(-80px)}
+    .reveal[data-anim="right"]{transform:translateX(80px)}
+    .reveal[data-anim="zoom"]{transform:scale(.92) translateY(20px)}
+    .reveal[data-anim="left"],.reveal[data-anim="right"]{transition-duration:1s}
+    .reveal.in[data-anim]{opacity:1;transform:none}
+
+    /* Floating: dekoratif bergerak pelan (pakai property 'translate' agar tidak bentrok dengan transform) */
+    @keyframes floatA{0%,100%{translate:0 0}50%{translate:0 -14px}}
+    @keyframes floatB{0%,100%{translate:0 0}50%{translate:10px 12px}}
+    @keyframes floatSpin{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -10px;rotate:6deg}}
+    .brand-mark{animation:floatSpin 5s ease-in-out infinite}
+    .eyebrow i{animation:pulse 2.4s infinite}
+    .card .icon,.contact-item .icon{animation:floatA 5s ease-in-out infinite}
+    .card:nth-child(2) .icon{animation-delay:-1.2s}.card:nth-child(3) .icon{animation-delay:-2.4s}.card:nth-child(4) .icon{animation-delay:-3.6s}
+    .contact-item:nth-child(4) .icon{animation-delay:-1.5s}.contact-item:nth-child(5) .icon{animation-delay:-3s}
+    .principle b{display:inline-block;animation:floatB 4.5s ease-in-out infinite}
+    .principle:nth-child(even) b{animation-delay:-2s}
+    .check i{animation:floatA 4s ease-in-out infinite}
+    .check:nth-child(even) i{animation-delay:-2s}
+
+    /* Hover: tombol */
+    .btn{position:relative;overflow:hidden;isolation:isolate;transition:background .25s,transform .25s,box-shadow .25s,color .25s}
+    .btn:after{content:"";position:absolute;top:0;left:-80%;width:50%;height:100%;z-index:-1;transform:skewX(-22deg);background:linear-gradient(90deg,transparent,#ffffff55,transparent);transition:left .6s ease}
+    .btn:hover:after{left:130%}
+    .btn:hover{box-shadow:0 12px 26px #1E5FE833;transform:translateY(-3px)}
+    .btn-pink:hover{box-shadow:0 12px 26px #D936C455}
+    .btn-yellow:hover{box-shadow:0 12px 26px #9DB7FF88}
+    .btn:active{transform:translateY(0) scale(.97);box-shadow:none}
+    .btn span{display:inline-block;transition:transform .25s}
+    .btn:hover span{transform:translateX(5px)}
+    .btn:focus-visible,.navlinks a:focus-visible,.program a:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+    /* Hover: link nav, card & elemen lain */
+    .navlinks a{position:relative;padding:4px 0}
+    .navlinks a:after{content:"";position:absolute;left:0;right:0;bottom:-2px;height:2px;border-radius:2px;background:var(--pink);transform:scaleX(0);transform-origin:left;transition:transform .3s ease}
+    .navlinks a:hover:after,.navlinks a.active:after{transform:scaleX(1)}
+    .card{transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+    .card:hover{border-color:#BFD5F6;transform:translateY(-8px)}
+    .card h3{transition:color .25s}.card:hover h3{color:var(--blue)}
+    .check,.contact-item{transition:transform .25s}.check:hover,.contact-item:hover{transform:translateX(6px)}
+    .footer-links a{transition:color .2s,transform .2s;display:inline-block}.footer-links a:hover{transform:translateY(-2px)}
+    .float{transition:translate .35s ease-out,box-shadow .3s}.float:hover{box-shadow:0 22px 50px rgba(22,67,132,.25)}
+    .art-panel,.about-art{transition:translate .35s ease-out,box-shadow .4s}
+    .about-art:hover{box-shadow:0 24px 55px #9DB7FF66}
+    form{transition:box-shadow .35s,transform .35s}form:hover{box-shadow:0 24px 65px rgba(22,67,132,.18)}
+    input,textarea,select{transition:border-color .2s,box-shadow .2s,transform .2s}
+    input:focus,textarea:focus,select:focus{transform:translateY(-1px)}
+    @media(max-width:600px){.wave-hero{height:60px}.wave-mq{height:38px}.marquee{padding-bottom:44px}}
+
+    .brand-mark{background:#001540;overflow:visible}
+    .brand-mark img{width:100%;height:100%;border-radius:14px;object-fit:cover}
+    .footer-logo{display:flex;align-items:center;gap:12px}
+    .footer-logo img{border-radius:14px;box-shadow:0 8px 20px #0006;transition:transform .3s}
+    .footer-logo:hover img{transform:rotate(-6deg) scale(1.08)}
+
+    /* ===== GALERI ===== */
+    .gallery{column-count:3;column-gap:18px}
+    .shot{position:relative;margin:0 0 18px;break-inside:avoid;border-radius:20px;overflow:hidden;background:var(--line);box-shadow:0 8px 28px #173D7712;cursor:zoom-in;transition:box-shadow .3s}
+    .shot img{width:100%;height:auto;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+    .shot:hover{box-shadow:var(--shadow)}.shot:hover img{transform:scale(1.07)}
+    .shot figcaption{position:absolute;inset:auto 0 0 0;padding:44px 18px 16px;color:#fff;display:flex;flex-direction:column;gap:2px;background:linear-gradient(0deg,#041537e6,transparent);opacity:0;transform:translateY(12px);transition:opacity .35s,transform .35s}
+    .shot figcaption strong{font:800 15px "Plus Jakarta Sans"}.shot figcaption span{font-size:12px;color:#DCEAFF}
+    .shot:hover figcaption,.shot:focus-visible figcaption{opacity:1;transform:none}
+    .shot:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    @media(hover:none){.shot figcaption{opacity:1;transform:none;padding-top:34px}}
+    #lightbox{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;background:#071a36ee;opacity:0;visibility:hidden;transition:opacity .3s,visibility .3s;cursor:zoom-out}
+    #lightbox.open{opacity:1;visibility:visible}
+    #lightbox figure{margin:0;max-width:min(1100px,100%);transform:scale(.94);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+    #lightbox.open figure{transform:none}
+    #lightbox img{max-height:80vh;width:auto;max-width:100%;margin:auto;border-radius:16px;box-shadow:0 30px 80px #0008}
+    #lightbox figcaption{color:#fff;text-align:center;margin-top:14px;font-size:14px}
+    #lightbox figcaption strong{display:block;font:800 17px "Plus Jakarta Sans"}
+    #lightbox button{position:absolute;top:18px;right:18px;width:44px;height:44px;border:0;border-radius:50%;background:#ffffff22;color:#fff;font-size:24px;transition:background .2s,transform .2s}
+    #lightbox button:hover{background:var(--pink);transform:rotate(90deg)}
+    @media(max-width:900px){.gallery{column-count:2}}
+    @media(max-width:480px){.gallery{column-gap:12px}.shot{margin-bottom:12px;border-radius:14px}}
+
+    a.contact-item{color:inherit}
+    a.contact-item:hover strong{color:var(--blue)}
+    .footer-social a{padding:8px 14px;border:1px solid #FFFFFF2A;border-radius:99px;font-weight:700;transition:background .25s,color .25s,transform .25s,border-color .25s}
+    .footer-social a:hover{background:var(--yellow);border-color:var(--yellow);color:#041537;transform:translateY(-3px)}
+
+    /* ===== WARNA SELARAS LOGO ===== */
+    .principles{background:linear-gradient(135deg,#041537,#0B2F8F 70%,#3B2A9E)}
+    .topline{background:linear-gradient(90deg,var(--blue) 0 48%,var(--pink) 48% 76%,var(--yellow) 76%)}
+    .float.two{color:var(--navy)}
+    .about-art strong{color:var(--navy)}
+
+    /* ===== HERO LOGO ===== */
+    .art-panel{padding:0;display:grid;place-items:center;background:radial-gradient(circle at 25% 15%,#0B2F8F 0,#041537 62%)}
+    .art-panel:after{display:none}
+    .hero-logo{position:relative;z-index:2;height:106%;width:auto;max-width:none;-webkit-mask-image:radial-gradient(closest-side,#000 86%,transparent 100%);mask-image:radial-gradient(closest-side,#000 86%,transparent 100%);animation:floatA 6s ease-in-out infinite;filter:drop-shadow(0 12px 30px #3B7BFF55)}
+
+    /* ===== KEGIATAN TERBARU ===== */
+    .event-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+    .event-photos{position:relative;padding:0 0 38px}
+    .event-photos:before{content:"";position:absolute;width:150px;height:150px;border-radius:50%;background:var(--pink);opacity:.16;left:-34px;top:-34px;animation:floatA 7s ease-in-out infinite}
+    .event-photos .main{position:relative;width:100%;height:auto;border-radius:26px;box-shadow:var(--shadow)}
+    .event-photos .sub{position:absolute;width:46%;height:auto;right:-18px;bottom:0;border-radius:18px;border:5px solid #fff;box-shadow:var(--shadow);transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+    .event-photos:hover .sub{transform:translateY(-8px) rotate(-2deg)}
+    .event-copy h2{font-size:clamp(28px,3.6vw,40px);margin:12px 0}
+    .event-copy>p{color:var(--muted);margin:0 0 20px}
+    .event-meta{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:10px}
+    .event-meta li{display:flex;flex-direction:column;padding:12px 16px;border-left:4px solid var(--pink);background:var(--soft);border-radius:0 14px 14px 0;transition:transform .25s}
+    .event-meta li:hover{transform:translateX(6px)}
+    .event-meta span{font-size:12px;color:var(--muted);font-weight:600}.event-meta strong{font-size:15px;color:var(--navy)}
+    .stats{display:flex;gap:14px;margin-bottom:24px}
+    .stat{flex:1;padding:16px 18px;border-radius:18px;background:linear-gradient(135deg,var(--navy),#0B2F8F);color:#fff;transition:transform .25s}
+    .stat:hover{transform:translateY(-5px)}
+    .stat b{display:block;font:800 40px/1.1 "Plus Jakarta Sans";letter-spacing:-1px}.stat span{font-size:12px;color:#DCEAFF;font-weight:700}
+
+    /* ===== CARA BERGABUNG ===== */
+    .steps-wrap{margin-top:34px}
+    .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .steps li{display:flex;gap:14px;align-items:flex-start;padding:18px;border-radius:18px;background:#fff;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+    .steps li:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+    .steps b{flex:none;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:var(--blue);color:#fff;font:800 15px "Plus Jakarta Sans"}
+    .steps strong{display:block;font:800 15px "Plus Jakarta Sans";margin-bottom:3px}.steps span{font-size:13px;color:var(--muted)}
+
+    /* ===== KONFIRMASI FORM ===== */
+    .form-done{text-align:center;padding:26px 6px}
+    .form-done[hidden]{display:none}
+    .form-done h3{font-size:24px;margin:14px 0 8px}.form-done p{color:var(--muted);font-size:14px;margin:0 auto 22px;max-width:420px}
+    .form-done .actions{justify-content:center}
+    .done-icon{width:74px;height:74px;margin:auto}
+    .done-icon svg{width:100%;height:100%;fill:none;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    .done-icon circle{stroke:var(--blue);fill:#E7F0FF;stroke-dasharray:152;stroke-dashoffset:152;animation:draw .7s ease forwards}
+    .done-icon path{stroke:var(--pink);stroke-dasharray:40;stroke-dashoffset:40;animation:draw .5s .55s ease forwards}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .form-done:not([hidden]){animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+
+    @media(max-width:900px){.event-grid{grid-template-columns:1fr;gap:44px}.steps{grid-template-columns:1fr}.event-photos .sub{right:-6px}}
+    @media(max-width:600px){.stats{flex-direction:row}.stat b{font-size:32px}}
+
+    /* ===== AKSESIBILITAS ===== */
+    .skip{position:absolute;left:12px;top:-70px;z-index:200;background:var(--navy);color:#fff;padding:11px 18px;border-radius:12px;font-weight:700;font-size:14px;transition:top .2s}
+    .skip:focus{top:12px;outline:3px solid var(--yellow);outline-offset:2px}
+    main:focus{outline:none}
+    :focus-visible{outline:3px solid var(--blue2);outline-offset:3px}
+    .steps-note{margin:18px 0 0;font-size:13px;color:var(--muted)}
+    .steps-note a{color:var(--blue);font-weight:800;text-decoration:underline;text-underline-offset:3px}
+
+    /* ===== LIGHTBOX GESER ===== */
+    #lightbox .lb-nav{top:50%;right:auto;width:52px;height:52px;margin-top:-26px;font-size:30px;line-height:1;padding:0 0 4px}
+    #lightbox .lb-prev{left:18px}#lightbox .lb-next{right:18px}
+    #lightbox .lb-nav:hover{transform:scale(1.1)}
+    #lightbox .lb-count{position:absolute;top:26px;left:24px;color:#DCEAFF;font:700 13px "DM Sans";letter-spacing:.5px}
+    #lightbox img{touch-action:pan-y}
+    #lightbox img.go-next{animation:lbNext .38s cubic-bezier(.2,.8,.2,1)}
+    #lightbox img.go-prev{animation:lbPrev .38s cubic-bezier(.2,.8,.2,1)}
+    @keyframes lbNext{from{opacity:0;transform:translateX(60px)}to{opacity:1;transform:none}}
+    @keyframes lbPrev{from{opacity:0;transform:translateX(-60px)}to{opacity:1;transform:none}}
+    @media(max-width:600px){#lightbox .lb-nav{width:42px;height:42px;margin-top:0;top:auto;bottom:22px;font-size:26px}#lightbox .lb-prev{left:22px}#lightbox .lb-next{right:22px}#lightbox figure{margin-bottom:56px}}
+
+    /* ===================================================================
+       V2 — LOGO RAPI · LEBIH RESPONSIF · LEBIH HIDUP
+       =================================================================== */
+    ::selection{background:var(--blue);color:#fff}
+    html{-webkit-text-size-adjust:100%}
+    img{height:auto}
+    h1,h2,h3{overflow-wrap:break-word}
+    .container{width:min(1200px,calc(100% - clamp(30px,6vw,72px)))}
+    .section{padding:clamp(60px,9vw,96px) 0}
+    .btn{min-height:46px}
+
+    /* --- Header & logo --- */
+    header{transition:height .3s,box-shadow .3s,background .3s}
+    header.scrolled{height:66px;box-shadow:0 10px 30px #04153714;background:rgba(255,255,255,.98)}
+    .brand{gap:12px;letter-spacing:-.6px;min-width:0}
+    .brand-mark{width:44px;height:44px;flex:none;border-radius:14px;background:#001540;overflow:hidden;animation:none;
+      box-shadow:0 0 0 2px #fff,0 0 0 3.5px #D7E4F8,0 8px 18px #1E5FE833;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+    .brand-mark:after{display:none}
+    .brand-mark img{width:100%;height:100%;border-radius:0;object-fit:contain}
+    .brand:hover .brand-mark{transform:rotate(-8deg) scale(1.07)}
+    .brand-text{display:flex;flex-direction:column;line-height:1;min-width:0}
+    .brand-name{font:800 21px/1 "Plus Jakarta Sans",sans-serif;white-space:nowrap}
+    .brand-text small{font:600 11px/1 "DM Sans",sans-serif;letter-spacing:.2px;color:var(--muted);margin-top:5px;white-space:nowrap}
+    .navlinks a.nav-cta{display:none}
+    .menu-btn{width:46px;height:46px;padding:0;position:relative;border-radius:14px}
+    .menu-btn span{position:absolute;left:13px;right:13px;height:2.5px;border-radius:2px;background:var(--blue);transition:transform .3s,opacity .2s,top .3s}
+    .menu-btn span:nth-child(1){top:16px}.menu-btn span:nth-child(2){top:22px}.menu-btn span:nth-child(3){top:28px}
+    .menu-btn.open span:nth-child(1){top:22px;transform:rotate(45deg)}
+    .menu-btn.open span:nth-child(2){opacity:0}
+    .menu-btn.open span:nth-child(3){top:22px;transform:rotate(-45deg)}
+
+    /* --- Hero --- */
+    .hero{padding:clamp(48px,8vw,90px) 0 clamp(88px,10vw,124px)}
+    .hero-spot{position:absolute;inset:0;pointer-events:none;background:radial-gradient(520px circle at var(--hx,72%) var(--hy,32%),#3B7BFF24,transparent 65%)}
+    .hero-grid{gap:clamp(28px,5vw,60px);filter:none}
+    h1{font-size:clamp(38px,6.4vw,70px)}
+    .hero-copy{font-size:clamp(15px,1.6vw,17.5px)}
+    @keyframes shine{to{background-position:-250% 0}}
+    .w.blue{background:linear-gradient(90deg,#1E5FE8,#3B7BFF 32%,#8C5CFF 62%,#1E5FE8);background-size:250% 100%;
+      -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+      animation:rise .9s cubic-bezier(.2,.8,.2,1) .28s both,shine 6s linear 1.2s infinite}
+
+    .hero-art{min-height:0;padding:18px;width:100%}
+    .art-panel{width:min(100%,440px);height:auto;aspect-ratio:1;padding:0;display:grid;place-items:center;
+      border-radius:clamp(26px,5vw,40px);
+      background:radial-gradient(circle at 28% 18%,#2A6BFF 0,#0B2F8F 40%,#041537 82%);
+      box-shadow:0 30px 70px #1E5FE83d,inset 0 0 0 1px #ffffff1f}
+    .art-panel:before{content:"";position:absolute;inset:7%;width:auto;height:auto;right:auto;top:auto;
+      border:2px dashed #ffffff38;border-radius:50%;animation:spin 48s linear infinite}
+    .art-panel:after{content:"";display:block;position:absolute;inset:20%;width:auto;height:auto;right:auto;top:auto;
+      background:radial-gradient(circle,#3B7BFF80,transparent 68%);border-radius:50%;transform:none;animation:breathe 4.5s ease-in-out infinite}
+    @keyframes breathe{50%{transform:scale(1.2);opacity:.6}}
+    .orbit{position:absolute;inset:7%;border-radius:50%;z-index:1;pointer-events:none;animation:spin 14s linear infinite}
+    .orbit i{position:absolute;top:-7px;left:50%;margin-left:-7px;width:14px;height:14px;border-radius:50%;
+      background:var(--pink);box-shadow:0 0 0 4px #D936C433,0 0 22px var(--pink)}
+    .orbit.rev{animation-duration:22s;animation-direction:reverse}
+    .orbit.rev i{top:auto;bottom:-6px;width:12px;height:12px;margin-left:-6px;background:var(--yellow);box-shadow:0 0 0 4px #9DB7FF33,0 0 22px var(--yellow)}
+    .logo-frame{position:relative;z-index:2;width:56%;aspect-ratio:1;border-radius:28%;overflow:hidden;background:#001540;
+      box-shadow:0 0 0 5px #ffffff26,0 0 0 12px #ffffff10,0 26px 50px #0007;
+      animation:floatA 6s ease-in-out infinite;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+    .hero-art:hover .logo-frame{transform:scale(1.05) rotate(-2deg)}
+    .hero-logo{position:static;display:block;width:100%;height:100%;max-width:none;object-fit:contain;
+      -webkit-mask-image:none;mask-image:none;animation:none;filter:none}
+    .float{display:flex;align-items:center;gap:6px;white-space:nowrap;font-size:clamp(11px,1.3vw,13px)}
+    .float.one{left:0;top:9%}.float.two{right:0;bottom:9%}
+    .float.three{left:3%;bottom:15%;background:#B726A4;color:#fff;animation:bob 4.6s ease-in-out -1s infinite}
+
+    .spk{position:absolute;bottom:-20px;border-radius:50%;pointer-events:none;opacity:0;z-index:0;animation:spkUp var(--t,12s) linear var(--dl,0s) infinite}
+    @keyframes spkUp{0%{transform:translateY(0) scale(.6);opacity:0}12%{opacity:.75}88%{opacity:.5}100%{transform:translate(var(--sx,20px),-760px) scale(1);opacity:0}}
+
+    /* --- Efek ripple, tilt, confetti, back-to-top --- */
+    .ripple{position:absolute;border-radius:50%;background:#ffffff66;transform:scale(0);animation:ripple .65s ease-out forwards;pointer-events:none;z-index:-1}
+    .btn-outline .ripple{background:#1E5FE824}
+    @keyframes ripple{to{transform:scale(1);opacity:0}}
+    .confetti{position:fixed;z-index:120;pointer-events:none}
+    #toTop{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:60;
+      width:50px;height:50px;padding:0;border:0;border-radius:50%;display:grid;place-items:center;
+      background:conic-gradient(var(--pink) calc(var(--p,0)*1%),#D7E4F8 0);box-shadow:0 10px 26px #04153733;
+      opacity:0;visibility:hidden;transform:translateY(14px) scale(.9);transition:opacity .3s,transform .3s,visibility .3s}
+    #toTop:before{content:"";position:absolute;inset:4px;border-radius:50%;background:#fff}
+    #toTop span{position:relative;color:var(--blue);font:800 20px/1 "Plus Jakarta Sans",sans-serif}
+    #toTop.show{opacity:1;visibility:visible;transform:none}
+    #toTop.show:hover{transform:translateY(-4px)}
+    @media(hover:hover){
+      .card:hover,.program:hover{transform:perspective(900px) translateY(-8px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+    }
+    @media(hover:none){
+      .card:hover,.program:hover,.steps li:hover,.stat:hover,.value:hover,.check:hover,.contact-item:hover,.event-meta li:hover{transform:none}
+      .principle:hover{transform:none}
+    }
+
+    /* --- Grid fleksibel --- */
+    .program-grid{grid-template-columns:repeat(auto-fit,minmax(min(100%,270px),1fr))}
+    .event-photos .sub{right:-14px}
+
+    /* --- Tablet & mobile --- */
+    @media(min-width:901px) and (max-width:1080px){
+      .nav{gap:14px}.navlinks{gap:15px;font-size:12.5px}
+      .nav>.btn{padding:11px 14px;font-size:13px}.brand-text small{display:none}
+    }
+    @media(max-width:900px){
+      .menu-btn{display:grid}
+      .navlinks{display:flex;position:absolute;top:100%;left:0;right:0;gap:0;align-items:stretch;
+        padding:6px clamp(15px,5vw,32px) 22px;max-height:calc(100dvh - 70px);overflow-y:auto;
+        background:#fff;border-bottom:1px solid var(--line);box-shadow:0 30px 50px #04153722;
+        opacity:0;visibility:hidden;pointer-events:none;transform:translateY(-10px);transition:opacity .28s,transform .28s,visibility .28s}
+      .navlinks.open{opacity:1;visibility:visible;pointer-events:auto;transform:none}
+      .navlinks a{padding:15px 4px;font-size:16px;border-bottom:1px solid var(--line);opacity:0;transform:translateX(-14px);transition:opacity .35s,transform .35s,color .2s}
+      .navlinks.open a{opacity:1;transform:none;transition-delay:calc(var(--i,0)*45ms)}
+      .navlinks a:not(.nav-cta):after{display:none}
+      .navlinks a.nav-cta{display:inline-flex;margin-top:18px;padding:14px 20px;font-size:15px;border:0;color:#fff}
+      .navlinks a.nav-cta:after{content:"";position:absolute;top:0;bottom:auto;left:-80%;width:50%;height:100%;z-index:-1;
+        transform:skewX(-22deg);background:linear-gradient(90deg,transparent,#ffffff55,transparent);transition:left .6s ease}
+      .navlinks a.nav-cta:hover:after{left:130%}
+      .navlinks a.nav-cta:hover,.navlinks a.nav-cta.active{color:#fff}
+
+      .hero-art{order:2;padding:10px 6px}
+      .art-panel{width:min(86%,380px);rotate:none}
+      .hero-art{transform:none}
+      .hero-grid{scale:1}.hero-grid>div:first-child{translate:none;opacity:1}
+      .card,.program,.value{translate:none;rotate:none}
+      .join-inner>div,.join-inner .btn{translate:none}
+      .event-photos .sub{right:-6px}
+      .steps{grid-template-columns:1fr}
+    }
+    @media(min-width:700px) and (max-width:900px){
+      .steps{grid-template-columns:repeat(3,1fr)}.steps li{flex-direction:column;gap:10px}
+      .program-grid .program:last-child:nth-child(odd){grid-column:1/-1}
+    }
+    @media(max-width:760px){.values{grid-template-columns:1fr 1fr}}
+    @media(max-width:600px){
+      .brand-name{font-size:19px}.brand-mark{width:40px;height:40px}
+      .art-panel{width:min(92%,330px)}
+      .float{padding:9px 12px;border-radius:12px}
+      .actions{width:100%}.actions .btn{flex:1 1 100%}
+      .hero-meta{flex-wrap:wrap}
+      .join-inner .btn{width:100%}
+      .event-photos{padding-bottom:30px}.event-photos .sub{right:0;width:48%;border-width:4px}
+      .stat{padding:14px}
+      form{padding:20px}
+      input,textarea,select{font-size:16px}
+      .footer-links{gap:12px 18px}
+      #toTop{width:46px;height:46px}
+    }
+    @media(max-width:480px){
+      .float.three{display:none}
+      .gallery{column-gap:10px}
+      .principle-list{grid-template-columns:1fr}
+    }
+    @media(max-width:380px){.brand-text small{display:none}}
+    @media(max-width:340px){.gallery{column-count:1}.values{grid-template-columns:1fr}.stats{flex-direction:column}}
+    @media(max-width:600px) and (orientation:landscape){.hero{padding-top:36px}.art-panel{width:min(60%,300px)}}
+    main{overflow-x:clip}
+    @media(max-width:900px){.reveal[data-anim="left"]{transform:translateX(-36px)}.reveal[data-anim="right"]{transform:translateX(36px)}}
+    @media(prefers-reduced-motion:reduce){.spk,.orbit{display:none}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Lewati ke konten utama</a>
+  <div class="topline"></div>
+  <div id="progress"></div>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#beranda" aria-label="UT PRIDE Beranda"><span class="brand-mark"><img src="foto/logo.webp" alt="" width="44" height="44"></span><span class="brand-text"><span class="brand-name">UT <em>PRIDE</em></span><small>Komunitas mahasiswa UT</small></span></a>
+      <nav class="navlinks" id="navlinks">
+        <a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kegiatan">Kegiatan</a><a href="#galeri">Galeri</a><a href="#program">Program</a><a href="#bergabung">Bergabung</a><a href="#kontak">Kontak</a><a class="btn nav-cta" href="#bergabung">Gabung Komunitas ↗</a>
+      </nav>
+      <a class="btn" href="#bergabung">Gabung Komunitas ↗</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Buka menu" aria-expanded="false" aria-controls="navlinks"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="beranda">
+      <div class="hero-spot" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow"><i></i> Independent student community</div>
+          <h1><span class="w">Connect.</span><br><span class="w blue">Inspire.</span> <span class="w pink">Grow.</span></h1>
+          <p class="hero-copy">UT PRIDE adalah ruang bertumbuh bagi mahasiswa Universitas Terbuka untuk mengembangkan potensi, memperluas relasi, berkolaborasi, dan menciptakan dampak positif bersama.</p>
+          <div class="actions"><a class="btn" href="#tentang">Kenali UT PRIDE <span>→</span></a><a class="btn btn-outline" href="#program">Lihat Program</a></div>
+          <div class="hero-meta"><div class="mini-dots"><b></b><b></b><b></b></div><span>Satu komunitas, banyak kemungkinan.</span></div>
+        </div>
+        <div class="hero-art" aria-label="Ilustrasi identitas UT PRIDE">
+          <div class="float one">✦ Learn together</div>
+          <div class="art-panel"><span class="orbit" aria-hidden="true"><i></i></span><span class="orbit rev" aria-hidden="true"><i></i></span><div class="logo-frame"><img class="hero-logo" src="foto/logo.webp" alt="Logo UT PRIDE: Unity, Pride, Together" width="640" height="640" fetchpriority="high"></div></div>
+          <div class="float two">Ideas into action ✨</div>
+          <div class="float three">🤝 Tumbuh bareng</div>
+        </div>
+      </div>
+    <div class="wave wave-hero" aria-hidden="true"><svg class="wv a" viewBox="0 0 2880 140" preserveAspectRatio="none" style="animation-duration:22s;"><path d="M-180,60 Q0,10 180,60 T540,60 T900,60 T1260,60 T1620,60 T1980,60 T2340,60 T2700,60 V140 H0 Z"/></svg><svg class="wv b" viewBox="0 0 2880 140" preserveAspectRatio="none" style="animation-duration:15s;animation-direction:reverse;"><path d="M-60,78 Q120,34 300,78 T660,78 T1020,78 T1380,78 T1740,78 T2100,78 T2460,78 T2820,78 V140 H0 Z"/></svg><svg class="wv c" viewBox="0 0 2880 140" preserveAspectRatio="none" style="animation-duration:10s;"><path d="M0,104 Q180,70 360,104 T720,104 T1080,104 T1440,104 T1800,104 T2160,104 T2520,104 T2880,104 V140 H0 Z"/></svg></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true"><div class="track"><div class="grp"><span>Connect</span><i>✦</i><span>Inspire</span><i>✦</i><span>Grow</span><i>✦</i><span>Respect</span><i>✦</i><span>Integrity</span><i>✦</i><span>Development</span><i>✦</i><span>Engagement</span><i>✦</i><span>Collaboration</span><i>✦</i><span>Empathy</span><i>✦</i></div><div class="grp"><span>Connect</span><i>✦</i><span>Inspire</span><i>✦</i><span>Grow</span><i>✦</i><span>Respect</span><i>✦</i><span>Integrity</span><i>✦</i><span>Development</span><i>✦</i><span>Engagement</span><i>✦</i><span>Collaboration</span><i>✦</i><span>Empathy</span><i>✦</i></div></div><div class="wave wave-mq" aria-hidden="true"><svg class="wv a" viewBox="0 0 2880 140" preserveAspectRatio="none" style="animation-duration:16s;animation-direction:reverse;"><path d="M-100,72 Q80,36 260,72 T620,72 T980,72 T1340,72 T1700,72 T2060,72 T2420,72 T2780,72 V140 H0 Z"/></svg><svg class="wv b" viewBox="0 0 2880 140" preserveAspectRatio="none" style="animation-duration:11s;"><path d="M0,100 Q180,70 360,100 T720,100 T1080,100 T1440,100 T1800,100 T2160,100 T2520,100 T2880,100 V140 H0 Z"/></svg></div></div>
+
+    <section class="section" id="tentang">
+      <div class="container about-grid">
+        <div class="about-art"><strong>Tempat ide bertemu, potensi bertumbuh.</strong></div>
+        <div class="about-copy">
+          <div class="kicker">Siapa kami</div>
+          <h2>Lebih dari sekadar komunitas.</h2>
+          <p>UT PRIDE merupakan komunitas independen yang ditujukan bagi mahasiswa Universitas Terbuka. Kami ingin menghadirkan ruang yang suportif agar mahasiswa dapat saling mengenal, belajar, berbagi pengalaman, dan mengembangkan gagasan.</p>
+          <p>Dengan semangat kebersamaan, UT PRIDE mendorong kegiatan pengembangan diri, networking, aksi sosial, serta eksplorasi teknologi dan kreativitas.</p>
+          <p>Di sini tidak ada jarak antara pengurus dan anggota. Kami semua keluarga yang saling menjaga dan saling mendukung.</p>
+          <div class="checks">
+            <div class="check"><i>✓</i> Terbuka untuk kolaborasi</div><div class="check"><i>✓</i> Berorientasi pada dampak</div>
+            <div class="check"><i>✓</i> Mendukung proses belajar</div><div class="check"><i>✓</i> Kreatif dan adaptif</div>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <div class="values">
+          <div class="value"><strong>VISI</strong><span>Mahasiswa saling menguatkan</span></div>
+          <div class="value"><strong>GROWTH</strong><span>Terus belajar dan berkembang</span></div>
+          <div class="value"><strong>UNITY</strong><span>Kolaborasi dalam keberagaman</span></div>
+          <div class="value"><strong>IMPACT</strong><span>Kontribusi yang bermakna</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="fokus">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Fokus komunitas</div><h2>Empat ruang untuk bertumbuh.</h2><p>Kami membangun lingkungan yang mendorong mahasiswa untuk berkembang sebagai individu sekaligus bagian dari masyarakat.</p></div>
+        <div class="cards">
+          <article class="card"><div class="icon">🌱</div><h3>Pengembangan Diri</h3><p>Belajar soft skills, kepemimpinan, komunikasi, manajemen waktu, dan kepercayaan diri melalui kegiatan yang aplikatif.</p></article>
+          <article class="card"><div class="icon">🤝</div><h3>Networking & Kolaborasi</h3><p>Memperluas relasi lintas daerah dan latar belakang, bertukar wawasan, serta membangun proyek bersama.</p></article>
+          <article class="card"><div class="icon">💛</div><h3>Kegiatan Sosial</h3><p>Menginisiasi aksi kepedulian, kegiatan sukarela, berbagi pengetahuan, dan kontribusi positif bagi lingkungan.</p></article>
+          <article class="card"><div class="icon">💻</div><h3>Teknologi & Kreativitas</h3><p>Mengeksplorasi literasi digital, teknologi, desain, konten kreatif, dan solusi inovatif untuk kebutuhan sekitar.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="kegiatan">
+      <div class="container event-grid">
+        <div class="event-photos">
+          <img class="main" src="foto/galeri/bakti-sosial-1.jpg" alt="Anggota UT PRIDE berfoto bersama anak-anak Panti Asuhan As-Salaam Nur Hidayah" width="1200" height="800">
+          <img class="sub" src="foto/galeri/bakti-sosial-2.jpg" alt="Panitia Bakti Sosial UT PRIDE Pekanbaru membawa spanduk kegiatan" width="1200" height="800">
+        </div>
+        <div class="event-copy">
+          <div class="kicker">Kegiatan terbaru</div>
+          <h2>Bakti Sosial UT PRIDE Pekanbaru.</h2>
+          <p>Berbagi, bertumbuh, dan bermimpi bersama. UT PRIDE mengunjungi Panti Asuhan As-Salaam Nur Hidayah untuk berbagi dan menghabiskan waktu bersama anak-anak panti.</p>
+          <ul class="event-meta">
+            <li><span>Hari &amp; tanggal</span><strong>Minggu, 22 November 2026</strong></li>
+            <li><span>Waktu</span><strong>10.00 WIB – selesai</strong></li>
+            <li><span>Lokasi</span><strong>Panti Asuhan As-Salaam Nur Hidayah</strong></li>
+          </ul>
+          <div class="stats">
+            <div class="stat"><b data-count="17">17</b><span>Panitia</span></div>
+            <div class="stat"><b data-count="20">20</b><span>Anak panti</span></div>
+          </div>
+          <a class="btn btn-outline" href="#galeri">Lihat dokumentasi <span>→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft" id="galeri">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Dokumentasi</div><h2>Momen bersama UT PRIDE.</h2><p>Dari bakti sosial hingga kopdar santai, inilah potret kebersamaan komunitas.</p></div>
+        <div class="gallery" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <div class="container">
+        <div class="section-head"><div class="kicker">Program ke depan</div><h2>Belajar bersama, berbagi bersama.</h2><p>UT PRIDE masih menyiapkan program rutinnya. Ke depan, kegiatan akan berfokus pada pembelajaran dan bakti sosial. Jadwalnya diumumkan lewat grup WhatsApp dan Instagram.</p></div>
+        <div class="program-grid">
+          <article class="program"><span class="num">SEGERA HADIR</span><h3>Belajar Bersama</h3><p>Diskusi, berbagi ilmu, dan sesi belajar bareng antaranggota agar semua bisa saling membantu dan bertumbuh.</p><a href="#bergabung">Cara bergabung →</a></article>
+          <article class="program"><span class="num">SUDAH BERJALAN</span><h3>Bakti Sosial</h3><p>Aksi kepedulian dan kegiatan sukarela untuk masyarakat sekitar. Salah satunya sudah terlaksana di Pekanbaru pada 22 November 2026.</p><a href="#kegiatan">Lihat kegiatannya →</a></article>
+          <article class="program"><span class="num">INFO TERBARU</span><h3>Kegiatan Berikutnya</h3><p>Jadwal belum dipastikan. Ikuti Instagram dan TikTok UT PRIDE agar tidak ketinggalan pengumuman.</p><a href="https://www.instagram.com/utpridepku___" data-link="ig">Ikuti Instagram →</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="principles">
+      <div class="container principle-inner">
+        <div><div class="kicker">Nilai yang kami bawa</div><h2>Ruang aman untuk belajar, berani mencoba, dan saling mendukung.</h2><p>Setiap anggota punya cerita, pengalaman, dan potensi yang berbeda. Di UT PRIDE, perbedaan menjadi kekuatan untuk menciptakan sesuatu yang lebih baik.</p></div>
+        <div class="principle-list">
+          <div class="principle"><b>01</b> Respect — saling menghargai</div>
+          <div class="principle"><b>02</b> Integrity — dapat dipercaya</div>
+          <div class="principle"><b>03</b> Development — terus bertumbuh</div>
+          <div class="principle"><b>04</b> Engagement — aktif berkontribusi</div>
+          <div class="principle"><b>05</b> Collaboration — kuat bersama</div>
+          <div class="principle"><b>06</b> Empathy — peduli sesama</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="join-banner" id="bergabung">
+      <div class="container join-inner">
+        <div><div class="kicker">Your journey starts here</div><h2>Temukan teman bertumbuhmu.</h2><p>Bergabung lewat grup WhatsApp komunitas. Ikuti tiga langkah singkat di bawah ini.</p></div>
+        <a class="btn btn-pink" href="https://wa.me/6282393549722" data-link="gabung">Masuk grup WhatsApp <span>↗</span></a>
+      </div>
+      <div class="container steps-wrap">
+        <ol class="steps">
+          <li><b>1</b><div><strong>Klik tombol gabung</strong><span>Kamu langsung diarahkan ke grup WhatsApp komunitas UT PRIDE.</span></div></li>
+          <li><b>2</b><div><strong>Perkenalkan dirimu</strong><span>Sapa anggota lain dan ceritakan sedikit tentang dirimu di grup.</span></div></li>
+          <li><b>3</b><div><strong>Ikuti kegiatan</strong><span>Informasi pembelajaran, bakti sosial, dan kegiatan lain diumumkan di grup.</span></div></li>
+        </ol>
+        <p class="steps-note">Ada pertanyaan sebelum bergabung? <a href="#kontak">Hubungi admin</a>.</p>
+      </div>
+    </section>
+
+    <section class="section" id="kontak">
+      <div class="container contact-grid">
+        <div class="contact-copy">
+          <div class="kicker">Mari terhubung</div><h2>Punya ide? Yuk, ngobrol!</h2>
+          <p>Hubungi UT PRIDE untuk bertanya tentang komunitas, peluang kolaborasi, kegiatan, atau informasi keanggotaan.</p>
+          <a class="contact-item" href="https://wa.me/6282393549722" data-link="wa"><div class="icon">📱</div><div><strong>WhatsApp admin</strong><small>0823-9354-9722</small></div></a>
+          <a class="contact-item" href="https://www.instagram.com/utpridepku___" data-link="ig"><div class="icon">📷</div><div><strong>Instagram</strong><small>@utpridepku___</small></div></a>
+          <a class="contact-item" href="https://www.tiktok.com/@utpridepku_" data-link="tt"><div class="icon">🎵</div><div><strong>TikTok</strong><small>@utpridepku_</small></div></a>
+        </div>
+        <form id="contactForm">
+          <div id="formFields"><div class="form-row">
+            <div><label for="nama">Nama lengkap</label><input id="nama" name="nama" placeholder="Nama kamu" required></div>
+            <div><label for="email">Email</label><input id="email" name="email" type="email" placeholder="nama@email.com" required></div>
+          </div>
+          <label for="status">Status</label><select id="status" name="status" required><option value="">Pilih status</option><option>Mahasiswa UT</option><option>Alumni UT</option><option>Lainnya</option></select>
+          <label for="topik">Topik pesan</label><select id="topik" name="topik"><option>Informasi keanggotaan</option><option>Kolaborasi kegiatan</option><option>Informasi program</option><option>Lainnya</option></select>
+          <label for="pesan">Pesan</label><textarea id="pesan" name="pesan" placeholder="Ceritakan hal yang ingin kamu tanyakan..." required></textarea>
+          <button class="btn" type="submit">Kirim pesan via WhatsApp ↗</button>
+          <p class="form-note">Pesan akan dibuka di WhatsApp dan dikirim ke admin UT PRIDE.</p></div>
+          <div class="form-done" id="formDone" hidden aria-live="polite">
+            <div class="done-icon" aria-hidden="true"><svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="24"/><path d="M15 27l8 8 14-16"/></svg></div>
+            <h3>Terima kasih, <span id="doneName">teman</span>!</h3>
+            <p>WhatsApp admin UT PRIDE sudah kami buka dengan pesanmu yang terisi otomatis. <strong>Tekan tombol kirim di WhatsApp</strong> agar pesan masuk ke admin. Admin akan membalas lewat WhatsApp.</p>
+            <div class="actions"><a class="btn" id="doneWa" href="#" data-link="wa" target="_blank" rel="noopener">Buka WhatsApp lagi <span>↗</span></a><button class="btn btn-outline" type="button" id="doneReset">Tulis pesan lain</button></div>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div><div class="footer-brand footer-logo"><img src="foto/logo.webp" alt="Logo UT PRIDE" width="56" height="56"><span>UT <span>PRIDE</span></span></div><div class="copyright">© <span id="year"></span> Azalea. Connect. Inspire. Grow.</div></div>
+      <div class="footer-links"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kegiatan">Kegiatan</a><a href="#galeri">Galeri</a><a href="#program">Program</a><a href="#kontak">Kontak</a></div>
+      <div class="footer-links footer-social"><a href="https://www.instagram.com/utpridepku___" data-link="ig">Instagram</a><a href="https://www.tiktok.com/@utpridepku_" data-link="tt">TikTok</a><a href="https://wa.me/6282393549722" data-link="wa">WhatsApp</a></div>
+    </div>
+    <div class="container disclaimer">UT PRIDE dalam konsep website ini diposisikan sebagai komunitas independen/eksternal. Website ini bukan situs resmi Universitas Terbuka dan tidak menyatakan afiliasi atau pengesahan resmi dari Universitas Terbuka.</div>
+  </footer>
+
+  <button id="toTop" type="button" aria-label="Kembali ke atas"><span aria-hidden="true">↑</span></button>
+
+  <script>
+    // =====================================================================
+    //  PENGATURAN — bagian ini yang boleh Anda edit sendiri
+    // =====================================================================
+    const KONFIG = {
+      whatsappAdmin: "6282393549722",                    // nomor admin, format 62... tanpa tanda + / spasi / strip
+      instagram: "https://www.instagram.com/utpridepku___",
+      tiktok: "https://www.tiktok.com/@utpridepku_",
+      grupWhatsApp: "https://chat.whatsapp.com/Be8BWP3P6bJFulwvWBiD3L?mode=gi_t",                                  // isi link grup WA (https://chat.whatsapp.com/...) bila sudah ada.
+                                                         // Jika kosong, tombol "Gabung" mengirim pesan ke admin.
+      pesanGabung: "Halo admin UT PRIDE, saya ingin bergabung ke grup WhatsApp komunitas.\n\nNama:\nStatus (mahasiswa/alumni UT):\nDomisili:"
+    };
+
+    // GALERI FOTO — simpan foto di folder "foto/galeri/", lalu tambah/ubah/hapus baris di bawah.
+    // file = nama file foto | judul & ket = teks saat foto di-hover | w & h = ukuran foto (boleh dihapus)
+    const FOLDER_FOTO = "foto/galeri/";
+    const GALERI = [
+    { file: "bakti-sosial-1.jpg", judul: "Bakti Sosial UT PRIDE Pekanbaru", ket: "Foto bersama adik-adik panti asuhan", w: 1200, h: 800 },
+    { file: "kopdar-beringin.jpg", judul: "Nongki di Akara Kitchen & Space", ket: "Ngobrol santai, tertawa bareng", w: 1200, h: 900 },
+    { file: "kopdar-buku.jpg", judul: "Nongki di Erber Coffe", ket: "Berbagi cerita dan buku", w: 1200, h: 675 },
+    { file: "bakti-sosial-2.jpg", judul: "Bakti Sosial · Pekanbaru", ket: "Berbagi, bertumbuh, dan bermimpi bersama", w: 1200, h: 800 },
+    { file: "momen-seru.jpg", judul: "Nongki di Memory Caffe", ket: "Selalu ada ruang untuk bergaya", w: 1200, h: 675 },
+    { file: "kopdar-meja.jpg", judul: "Nongki di Zilco", ket: "Duduk bareng, tumbuh bareng", w: 900, h: 1200 },
+    { file: "tim-kompak.jpg", judul: "Kebersamaan tim", ket: "Semangat sesudah kegiatan", w: 1200, h: 800 },
+    { file: "kopdar-sofa.jpg", judul: "Nongki di Akara Kitchen & Space", ket: "Satu meja, banyak ide", w: 1200, h: 675 }
+    ];
+    // =====================================================================
+
+    // Tautan otomatis dari pengaturan di atas
+    const waUrl = text => `https://wa.me/${KONFIG.whatsappAdmin}` + (text ? `?text=${encodeURIComponent(text)}` : "");
+    document.querySelectorAll("[data-link]").forEach(a => {
+      const k = a.dataset.link;
+      const url = { wa: waUrl(), ig: KONFIG.instagram, tt: KONFIG.tiktok, gabung: KONFIG.grupWhatsApp || waUrl(KONFIG.pesanGabung) }[k];
+      if (url) { a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+    });
+
+    // Bangun galeri dari daftar GALERI
+    (() => {
+      const grid = document.getElementById("galleryGrid");
+      GALERI.forEach(g => {
+        const fig = document.createElement("figure"); fig.className = "shot";
+        const img = document.createElement("img");
+        img.src = FOLDER_FOTO + g.file; img.alt = `${g.judul || "Foto UT PRIDE"}${g.ket ? " — " + g.ket : ""}`; img.decoding = "async";
+        if (g.w && g.h) { img.width = g.w; img.height = g.h; }
+        const cap = document.createElement("figcaption");
+        const st = document.createElement("strong"); st.textContent = g.judul || "";
+        const sp = document.createElement("span"); sp.textContent = g.ket || "";
+        cap.append(st, sp); fig.append(img, cap); grid.appendChild(fig);
+      });
+    })();
+
+    const menuBtn = document.getElementById("menuBtn");
+    const nav = document.getElementById("navlinks");
+    const setMenu = open => {
+      nav.classList.toggle("open", open);
+      menuBtn.classList.toggle("open", open);
+      menuBtn.setAttribute("aria-expanded", String(open));
+      menuBtn.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+    };
+    nav.id = "navlinks";
+    nav.querySelectorAll("a").forEach((a, i) => { a.style.setProperty("--i", i); a.addEventListener("click", () => setMenu(false)); });
+    menuBtn.addEventListener("click", () => setMenu(!nav.classList.contains("open")));
+    addEventListener("keydown", e => { if (e.key === "Escape") setMenu(false); });
+    document.addEventListener("click", e => { if (nav.classList.contains("open") && !nav.contains(e.target) && !menuBtn.contains(e.target)) setMenu(false); });
+    matchMedia("(min-width:901px)").addEventListener("change", e => e.matches && setMenu(false));
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const form = document.getElementById("contactForm");
+    const fields = document.getElementById("formFields"), done = document.getElementById("formDone");
+    form.addEventListener("submit", event => {
+      event.preventDefault();
+      const data = new FormData(form);
+      const message = [
+        "Halo UT PRIDE, saya ingin menghubungi komunitas.",
+        "",
+        `Nama: ${data.get("nama")}`,
+        `Email: ${data.get("email")}`,
+        `Status: ${data.get("status")}`,
+        `Topik: ${data.get("topik")}`,
+        `Pesan: ${data.get("pesan")}`
+      ].join("\n");
+      const url = waUrl(message);
+      window.open(url, "_blank", "noopener");
+      document.getElementById("doneName").textContent = String(data.get("nama")).trim().split(" ")[0] || "teman";
+      const again = document.getElementById("doneWa"); again.href = url;
+      fields.hidden = true; done.hidden = false;
+      done.scrollIntoView({behavior: "smooth", block: "center"});
+    });
+    document.getElementById("doneReset").addEventListener("click", () => { form.reset(); done.hidden = true; fields.hidden = false; });
+    const sections = document.querySelectorAll("main section[id]");
+    const navLinks = document.querySelectorAll(".navlinks a");
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            navLinks.forEach(link => link.classList.toggle("active", link.getAttribute("href") === `#${entry.target.id}`));
+          }
+        });
+      }, {rootMargin:"-35% 0px -55% 0px"});
+      sections.forEach(section => observer.observe(section));
+    }
+
+    // ===== MOTION =====
+    const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const bar = document.getElementById("progress");
+    addEventListener("scroll", () => {
+      const max = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${max > 0 ? scrollY / max : 0})`;
+    }, {passive:true});
+    const art = document.querySelector(".hero-art");
+    if (!reduceMotion) {
+      art.addEventListener("pointermove", e => {
+        const r = art.getBoundingClientRect();
+        art.style.setProperty("--px", ((e.clientX - r.left) / r.width - .5).toFixed(3));
+        art.style.setProperty("--py", ((e.clientY - r.top) / r.height - .5).toFixed(3));
+      });
+      art.addEventListener("pointerleave", () => { art.style.setProperty("--px", 0); art.style.setProperty("--py", 0); });
+    }
+    document.querySelectorAll(".card,.program").forEach(el => el.addEventListener("pointermove", e => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty("--mx", (e.clientX - r.left) + "px");
+      el.style.setProperty("--my", (e.clientY - r.top) + "px");
+    }));
+    if (!reduceMotion && "IntersectionObserver" in window) {
+      // [selector, arah animasi]
+      const rules = [
+        [".section-head", "up"], [".about-art", "left"], [".about-copy", "right"],
+        [".value", "up"], [".card", "up"], [".program", "up"], [".shot", "zoom"], [".event-photos", "left"], [".event-copy", "right"], [".stat", "zoom"], [".steps li", "up"],
+        [".principle-inner>div:first-child", "left"], [".principle", "up"],
+        [".join-inner>div", "left"], [".join-inner>.btn", "right"],
+        [".contact-copy", "left"], ["form", "right"]
+      ];
+      const io = new IntersectionObserver(entries => entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        en.target.classList.add("in");
+        io.unobserve(en.target);
+        setTimeout(() => en.target.classList.remove("reveal", "in"), 2200);
+      }), {threshold:.12, rootMargin:"0px 0px -6% 0px"});
+      rules.forEach(([sel, dir]) => document.querySelectorAll(sel).forEach(el => {
+        // stagger: urutan elemen sejenis dalam satu induk -> delay bertahap
+        const sibs = [...el.parentElement.children].filter(c => c.matches(sel));
+        const i = Math.max(0, sibs.indexOf(el));
+        el.style.setProperty("--d", Math.min(i, 8) * .12 + "s");
+        el.dataset.anim = dir;
+        el.classList.add("reveal");
+        io.observe(el);
+      }));
+    }
+
+
+    // ===== COUNT-UP ANGKA KEGIATAN =====
+    (() => {
+      const nums = document.querySelectorAll("[data-count]");
+      if (reduceMotion || !("IntersectionObserver" in window)) return;
+      const io2 = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return; io2.unobserve(e.target);
+        const el = e.target, end = +el.dataset.count, t0 = performance.now(), dur = 1400;
+        (function tick(now) { const p = Math.min(1, (now - t0) / dur); el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(tick); })(t0);
+      }), {threshold:.6});
+      nums.forEach(n => { n.textContent = "0"; io2.observe(n); });
+    })();
+
+    // ===== SCROLL-DRIVEN (hanya dihitung saat scroll; efek berat dimatikan di HP) =====
+    if (!reduceMotion) {
+      const $ = q => document.querySelector(q);
+      const clamp = v => Math.min(1, Math.max(0, v));
+      const hero = $(".hero"), about = $(".about-art"), prin = $(".principles"), join = $(".join-banner"), track = $(".track");
+      const movers = [...document.querySelectorAll(".card,.program,.value")];
+      movers.forEach(el => el.style.setProperty("--dir", [...el.parentElement.children].indexOf(el) % 2 ? 1 : -1));
+      const heavy = matchMedia("(min-width:901px) and (hover:hover)");
+      const prog = el => { const r = el.getBoundingClientRect(); return (innerHeight - r.top) / (innerHeight + r.height); };
+      let x = 0, lastY = scrollY, lastT = performance.now(), doneY = -1, doneW = -1;
+      (function frame(t) {
+        const dt = Math.min(t - lastT, 64), dy = scrollY - lastY;
+        lastT = t; lastY = scrollY;
+        const half = track.scrollWidth / 2;
+        if (half) { x = (((x + dt * .04 + dy * .9) % half) + half) % half; track.style.transform = `translateX(${-x}px)`; }
+        if (scrollY !== doneY || innerWidth !== doneW) {
+          doneY = scrollY; doneW = innerWidth;
+          const ap = (prog(about) - .5).toFixed(3);
+          about.parentElement.style.setProperty("--ap", ap);
+          about.style.setProperty("--ap", ap);
+          prin.style.setProperty("--ap", (prog(prin) - .5).toFixed(3));
+          join.style.setProperty("--jp", (1 - clamp(prog(join) * 1.6)).toFixed(3));
+          if (heavy.matches) {
+            hero.style.setProperty("--hp", clamp(scrollY / hero.offsetHeight).toFixed(3));
+            movers.forEach(el => {
+              const r = el.getBoundingClientRect();
+              el.style.setProperty("--o", (1 - clamp((innerHeight - r.top) / (innerHeight * .55))).toFixed(3));
+            });
+          } else { hero.style.setProperty("--hp", 0); }
+        }
+        requestAnimationFrame(frame);
+      })(lastT);
+    }
+
+    // ===== LIGHTBOX GALERI (bisa digeser) =====
+    (() => {
+      const shots = [...document.querySelectorAll(".shot")];
+      if (!shots.length) return;
+      const lb = document.createElement("div");
+      lb.id = "lightbox"; lb.setAttribute("role", "dialog"); lb.setAttribute("aria-modal", "true"); lb.setAttribute("aria-label", "Pratinjau foto");
+      lb.innerHTML = '<span class="lb-count" aria-live="polite"></span>' +
+        '<button type="button" class="lb-close" aria-label="Tutup">×</button>' +
+        '<button type="button" class="lb-nav lb-prev" aria-label="Foto sebelumnya">‹</button>' +
+        '<button type="button" class="lb-nav lb-next" aria-label="Foto berikutnya">›</button>' +
+        '<figure><img alt=""><figcaption></figcaption></figure>';
+      document.body.appendChild(lb);
+      const img = lb.querySelector("img"), cap = lb.querySelector("figcaption"), count = lb.querySelector(".lb-count");
+      const btns = [...lb.querySelectorAll("button")];
+      let cur = 0, last = null;
+      const preload = i => { const n = new Image(); n.src = shots[(i + shots.length) % shots.length].querySelector("img").src; };
+      const show = (i, dir) => {
+        cur = (i + shots.length) % shots.length;
+        const s = shots[cur], si = s.querySelector("img");
+        img.className = ""; void img.offsetWidth;
+        img.src = si.src; img.alt = si.alt; cap.innerHTML = s.querySelector("figcaption").innerHTML;
+        count.textContent = `${cur + 1} / ${shots.length}`;
+        if (dir) img.className = dir > 0 ? "go-next" : "go-prev";
+        preload(cur + 1); preload(cur - 1);
+      };
+      const open = i => { last = shots[i]; show(i); lb.classList.add("open"); document.body.style.overflow = "hidden"; lb.querySelector(".lb-close").focus(); };
+      const close = () => { lb.classList.remove("open"); document.body.style.overflow = ""; last && last.focus(); };
+      const prev = () => show(cur - 1, -1), next = () => show(cur + 1, 1);
+      if (shots.length < 2) lb.querySelectorAll(".lb-nav").forEach(b => b.hidden = true);
+      shots.forEach((s, i) => {
+        s.tabIndex = 0; s.setAttribute("role", "button");
+        s.addEventListener("click", () => open(i));
+        s.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(i); } });
+      });
+      lb.querySelector(".lb-close").addEventListener("click", close);
+      lb.querySelector(".lb-prev").addEventListener("click", prev);
+      lb.querySelector(".lb-next").addEventListener("click", next);
+      lb.addEventListener("click", e => { if (e.target === lb) close(); });
+      addEventListener("keydown", e => {
+        if (!lb.classList.contains("open")) return;
+        if (e.key === "Escape") close();
+        else if (e.key === "ArrowLeft") prev();
+        else if (e.key === "ArrowRight") next();
+        else if (e.key === "Tab") {   // fokus tetap di dalam lightbox
+          const vis = btns.filter(b => !b.hidden), a = vis[0], z = vis[vis.length - 1];
+          if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+          else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+        }
+      });
+      // geser jari (swipe) di HP
+      let x0 = null, y0 = 0;
+      lb.addEventListener("touchstart", e => { x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; }, {passive:true});
+      lb.addEventListener("touchend", e => {
+        if (x0 === null) return;
+        const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.4) (dx < 0 ? next : prev)();
+        x0 = null;
+      }, {passive:true});
+    })();
+
+    // ===== V2: EFEK TAMBAHAN =====
+    (() => {
+      const hdr = document.querySelector("header"), top = document.getElementById("toTop");
+      const onScroll = () => {
+        hdr.classList.toggle("scrolled", scrollY > 24);
+        const max = document.documentElement.scrollHeight - innerHeight;
+        top.style.setProperty("--p", max > 0 ? (scrollY / max * 100).toFixed(1) : 0);
+        top.classList.toggle("show", scrollY > 700);
+      };
+      addEventListener("scroll", onScroll, {passive:true}); onScroll();
+      top.addEventListener("click", () => scrollTo({top:0, behavior: reduceMotion ? "auto" : "smooth"}));
+      if (reduceMotion) return;
+
+      // ripple pada tombol
+      document.addEventListener("pointerdown", e => {
+        const b = e.target.closest(".btn"); if (!b) return;
+        const r = b.getBoundingClientRect(), s = Math.max(r.width, r.height) * 2.2;
+        const d = document.createElement("span"); d.className = "ripple";
+        d.style.cssText = `width:${s}px;height:${s}px;left:${e.clientX - r.left - s / 2}px;top:${e.clientY - r.top - s / 2}px`;
+        b.appendChild(d); d.addEventListener("animationend", () => d.remove());
+      });
+
+      // confetti
+      const confetti = (cx, cy) => {
+        const colors = ["#1E5FE8", "#D936C4", "#9DB7FF", "#3B7BFF", "#ffffff"];
+        for (let i = 0; i < 36; i++) {
+          const p = document.createElement("i"), s = 6 + Math.random() * 7;
+          p.className = "confetti";
+          p.style.cssText = `left:${cx}px;top:${cy}px;width:${s}px;height:${s * (Math.random() > .5 ? 1 : .45)}px;background:${colors[i % colors.length]};border-radius:${Math.random() > .6 ? "50%" : "2px"}`;
+          document.body.appendChild(p);
+          const ang = Math.random() * Math.PI * 2, v = 120 + Math.random() * 220;
+          const dx = Math.cos(ang) * v, dy = Math.sin(ang) * v - 160;
+          p.animate([{transform:"translate(0,0) rotate(0)", opacity:1},
+                     {transform:`translate(${dx}px,${dy + 380}px) rotate(${Math.random() * 720 - 360}deg)`, opacity:0}],
+                    {duration:1100 + Math.random() * 700, easing:"cubic-bezier(.2,.7,.3,1)"}).onfinish = () => p.remove();
+        }
+      };
+      document.getElementById("contactForm").addEventListener("submit", () => setTimeout(() => {
+        const r = document.getElementById("formDone").getBoundingClientRect(); confetti(r.left + r.width / 2, r.top + 60);
+      }, 250));
+      document.querySelectorAll('[data-link="gabung"]').forEach(a => a.addEventListener("click", e => confetti(e.clientX, e.clientY)));
+
+      // kilau melayang di hero
+      const hero = document.querySelector(".hero");
+      const n = innerWidth < 700 ? 8 : 16, cols = ["#3B7BFF", "#D936C4", "#9DB7FF"];
+      for (let i = 0; i < n; i++) {
+        const s = document.createElement("i"), z = 4 + Math.random() * 8;
+        s.className = "spk";
+        s.style.cssText = `left:${Math.random() * 100}%;width:${z}px;height:${z}px;background:${cols[i % 3]};--t:${9 + Math.random() * 9}s;--dl:${-Math.random() * 14}s;--sx:${(Math.random() - .5) * 120}px`;
+        hero.appendChild(s);
+      }
+
+      if (matchMedia("(hover:hover)").matches) {
+        // sorot cahaya mengikuti kursor di hero
+        hero.addEventListener("pointermove", e => {
+          const r = hero.getBoundingClientRect();
+          hero.style.setProperty("--hx", ((e.clientX - r.left) / r.width * 100).toFixed(1) + "%");
+          hero.style.setProperty("--hy", ((e.clientY - r.top) / r.height * 100).toFixed(1) + "%");
+        });
+        // kartu sedikit miring mengikuti kursor
+        document.querySelectorAll(".card,.program").forEach(el => {
+          el.addEventListener("pointermove", e => {
+            const r = el.getBoundingClientRect();
+            el.style.setProperty("--ry", (((e.clientX - r.left) / r.width - .5) * 7).toFixed(2) + "deg");
+            el.style.setProperty("--rx", (-((e.clientY - r.top) / r.height - .5) * 7).toFixed(2) + "deg");
+          });
+          el.addEventListener("pointerleave", () => { el.style.setProperty("--rx", "0deg"); el.style.setProperty("--ry", "0deg"); });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
