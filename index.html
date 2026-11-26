@@ -508,6 +508,19 @@
       .gallery{column-gap:10px}
       .principle-list{grid-template-columns:1fr}
     }
+     .copyright {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
+}
+
+.copyright-azalea {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+    vertical-align: middle;
+}
     @media(max-width:380px){.brand-text small{display:none}}
     @media(max-width:340px){.gallery{column-count:1}.values{grid-template-columns:1fr}.stats{flex-direction:column}}
     @media(max-width:600px) and (orientation:landscape){.hero{padding-top:36px}.art-panel{width:min(60%,300px)}}
@@ -694,8 +707,18 @@
 
   <footer>
     <div class="container footer-inner">
-      <div><div class="footer-brand footer-logo"><img src="foto/logo.webp" alt="Logo UT PRIDE" width="56" height="56"><span>UT <span>PRIDE</span></span></div><div class="copyright">© <span id="year"></span> Azalea. Connect. Inspire. Grow.</div></div>
-      <div class="footer-links"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kegiatan">Kegiatan</a><a href="#galeri">Galeri</a><a href="#program">Program</a><a href="#kontak">Kontak</a></div>
+      <div>
+    <div class="footer-brand footer-logo">
+        <img src="foto/logo.webp" alt="Logo UT PRIDE" width="56" height="56">
+        <span>UT <span>PRIDE</span></span>
+    </div>
+
+    <div class="copyright">
+        <img src="foto/azalea.png" alt="Azalea" class="copyright-azalea"><span>2026</span>
+        
+       Azalea
+    </div>
+</div> <div class="footer-links"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kegiatan">Kegiatan</a><a href="#galeri">Galeri</a><a href="#program">Program</a><a href="#kontak">Kontak</a></div>
       <div class="footer-links footer-social"><a href="https://www.instagram.com/utpridepku___" data-link="ig">Instagram</a><a href="https://www.tiktok.com/@utpridepku_" data-link="tt">TikTok</a><a href="https://wa.me/6282393549722" data-link="wa">WhatsApp</a></div>
     </div>
     <div class="container disclaimer">UT PRIDE dalam konsep website ini diposisikan sebagai komunitas independen/eksternal. Website ini bukan situs resmi Universitas Terbuka dan tidak menyatakan afiliasi atau pengesahan resmi dari Universitas Terbuka.</div>
