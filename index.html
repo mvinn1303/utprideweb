@@ -508,18 +508,13 @@
       .gallery{column-gap:10px}
       .principle-list{grid-template-columns:1fr}
     }
-     .copyright {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    flex-wrap: wrap;
+    .copyright{
+  display:flex;align-items:center;gap:8px;flex-wrap:wrap;
+  font-size:12px;color:#AFC2DE;margin-top:8px;
 }
-
-.copyright-azalea {
-    width: 20px;
-    height: 20px;
-    object-fit: contain;
-    vertical-align: middle;
+.copyright-azalea{
+  width:22px;height:22px;flex:none;
+  object-fit:contain;display:block;border-radius:6px;
 }
     @media(max-width:380px){.brand-text small{display:none}}
     @media(max-width:340px){.gallery{column-count:1}.values{grid-template-columns:1fr}.stats{flex-direction:column}}
@@ -714,10 +709,9 @@
     </div>
 
     <div class="copyright">
-        <img src="foto/azalea.png" alt="Azalea" class="copyright-azalea"><span>2026</span>
-        
-       Azalea
-    </div>
+  <img src="foto/azalea.png" alt="" class="copyright-azalea" width="22" height="22" onerror="this.style.display='none'">
+  <span>© <span id="year">2026</span> Azalea</span>
+</div>
 </div> <div class="footer-links"><a href="#beranda">Beranda</a><a href="#tentang">Tentang</a><a href="#kegiatan">Kegiatan</a><a href="#galeri">Galeri</a><a href="#program">Program</a><a href="#kontak">Kontak</a></div>
       <div class="footer-links footer-social"><a href="https://www.instagram.com/utpridepku___" data-link="ig">Instagram</a><a href="https://www.tiktok.com/@utpridepku_" data-link="tt">TikTok</a><a href="https://wa.me/6282393549722" data-link="wa">WhatsApp</a></div>
     </div>
